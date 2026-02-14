@@ -42,13 +42,13 @@ export default function Navbar() {
         <div className="navbar-brand">
           <img
             className="brand-logo-icon"
-            src="/bloom-life-logo.png"
+            src="https://res.cloudinary.com/dlago1qei/image/upload/f_auto,q_auto,w_900/Bloom_11_ekmyha.png"
             alt="Bloom Life icon"
             loading="lazy"
           />
           <img
             className="brand-logo-text"
-            src="/image.png"
+            src="https://res.cloudinary.com/dlago1qei/image/upload/v1771070381/Screenshot_2026-02-13_191552_zhagbw.png"
             alt="Bloom Life"
             loading="lazy"
           />

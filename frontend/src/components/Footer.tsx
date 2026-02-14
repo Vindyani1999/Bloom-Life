@@ -19,7 +19,11 @@ export default function Footer() {
         {/* Column 2: Brand & Copyright */}
         <div className="footer-column footer-brand-column">
           <div className="footer-visual">
-            <img src="/footer.png" alt="Bloom Life" className="footer-logo" />
+            <img
+              src="https://res.cloudinary.com/dlago1qei/image/upload/v1771070397/Bloom_14_cqnlst.png"
+              alt="Bloom Life"
+              className="footer-logo"
+            />
           </div>
           <p className="footer-copyright">
             © 2026 Bloom Life. All rights reserved.

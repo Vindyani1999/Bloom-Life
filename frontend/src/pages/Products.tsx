@@ -241,13 +241,13 @@ export default function Products() {
         >
           {isFiltersOpen ? (
             <img
-              src="/avacado-front.png"
+              src="https://res.cloudinary.com/dlago1qei/image/upload/v1771071428/Bloom_16_xerbgp.png"
               alt="Close filters"
               className="filter-toggle-icon"
             />
           ) : (
             <img
-              src="/avacado-back.png"
+              src="https://res.cloudinary.com/dlago1qei/image/upload/v1771071441/Bloom_15_u39dvl.png"
               alt="Open filters"
               className="filter-toggle-icon"
             />
