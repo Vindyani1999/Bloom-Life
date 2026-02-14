@@ -401,6 +401,10 @@
   letter-spacing: 0.2px;
 }
 
+.product-description p {
+  white-space: pre-line;
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;

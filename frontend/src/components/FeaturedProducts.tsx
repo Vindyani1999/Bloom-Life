@@ -120,7 +120,7 @@ export default function FeaturedProducts() {
                             Rs. {product.price.toLocaleString()}
                           </span>
                         </div>
-                        <span className="discount-badge-inline">
+                        <span className="discount-badge">
                           -
                           {Math.round(
                             ((product.price - product.discountedPrice) /

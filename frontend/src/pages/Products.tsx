@@ -206,14 +206,13 @@ export default function Products() {
                                   Rs. {product.price.toLocaleString()}
                                 </span>
                               </div>
-                              <span className="discount-badge-inline">
-                                -
+                              <span className="discount-badge">
                                 {Math.round(
                                   ((product.price - product.discountedPrice) /
                                     product.price) *
                                     100,
                                 )}
-                                %
+                                % OFF
                               </span>
                             </div>
                           ) : (
@@ -247,7 +246,7 @@ export default function Products() {
             />
           ) : (
             <img
-              src="https://res.cloudinary.com/dlago1qei/image/upload/v1771071441/Bloom_15_u39dvl.png"
+              src="https://res.cloudinary.com/dlago1qei/image/upload/v1771071428/Bloom_16_xerbgp.png"
               alt="Open filters"
               className="filter-toggle-icon"
             />
