@@ -1,0 +1,578 @@
+.top-banner {
+  background: linear-gradient(135deg, #e8f0dc 0%, #f5f5dc 100%);
+  padding: 7rem 2rem 7rem 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-items {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-item {
+  position: absolute;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath fill='black' d='M60 18c8 0 14 6 14 14 0 3-.8 5.7-2.2 8 2.3-1.4 5-2.2 7.9-2.2 8 0 14 6 14 14s-6 14-14 14c-2.9 0-5.6-.8-7.9-2.2 1.4 2.3 2.2 5 2.2 7.9 0 8-6 14-14 14s-14-6-14-14c0-2.9.8-5.6 2.2-7.9-2.3 1.4-5 2.2-7.9 2.2-8 0-14-6-14-14s-6-14 14-14c2.9 0 5.6.8 7.9 2.2C46.8 37.7 46 35 46 32c0-8 6-14 14-14z'/%3E%3Ccircle cx='60' cy='60' r='14' fill='white'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath fill='black' d='M60 18c8 0 14 6 14 14 0 3-.8 5.7-2.2 8 2.3-1.4 5-2.2 7.9-2.2 8 0 14 6 14 14s-6 14-14 14c-2.9 0-5.6-.8-7.9-2.2 1.4 2.3 2.2 5 2.2 7.9 0 8-6 14-14 14s-14-6-14-14c0-2.9.8-5.6 2.2-7.9-2.3 1.4-5 2.2-7.9 2.2-8 0-14-6-14-14s-6-14 14-14c2.9 0 5.6.8 7.9 2.2C46.8 37.7 46 35 46 32c0-8 6-14 14-14z'/%3E%3Ccircle cx='60' cy='60' r='14' fill='white'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  color: rgba(255, 165, 196, 0.85);
+  opacity: 0.85;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.08));
+  animation: floatItem 9s ease-in-out infinite;
+}
+
+.floating-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(255, 235, 243, 0.95),
+    rgba(255, 235, 243, 0) 55%
+  );
+  -webkit-mask-image: inherit;
+  -webkit-mask-repeat: inherit;
+  -webkit-mask-size: inherit;
+  -webkit-mask-position: inherit;
+  mask-image: inherit;
+  mask-repeat: inherit;
+  mask-size: inherit;
+  mask-position: inherit;
+  pointer-events: none;
+}
+
+.item-1 {
+  width: 110px;
+  height: 110px;
+  top: 4%;
+  left: 6%;
+  animation-delay: 0s;
+  /* background-color: rgba(255, 170, 200, 0.9); */
+  color: rgba(255, 170, 200, 0.9);
+}
+
+.item-2 {
+  width: 70px;
+  height: 70px;
+  top: 18%;
+  left: 26%;
+  animation-delay: 1s;
+  color: rgba(255, 176, 206, 0.85);
+}
+
+.item-3 {
+  width: 140px;
+  height: 140px;
+  bottom: 12%;
+  left: 18%;
+  animation-delay: 2s;
+  color: rgba(255, 182, 214, 0.85);
+}
+
+.item-4 {
+  width: 90px;
+  height: 90px;
+  bottom: 8%;
+  left: 56%;
+  animation-delay: 3s;
+  color: rgba(255, 168, 198, 0.85);
+}
+
+.item-5 {
+  width: 60px;
+  height: 60px;
+  top: 12%;
+  left: 45%;
+  animation-delay: 4s;
+  color: rgba(255, 190, 215, 0.85);
+}
+
+.item-6 {
+  width: 80px;
+  height: 80px;
+  bottom: 6%;
+  left: 2%;
+  animation-delay: 5s;
+  color: rgba(255, 172, 202, 0.85);
+}
+
+@keyframes floatItem {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) translateX(10px) rotate(6deg) scale(1.02);
+  }
+}
+
+.bloom-decoration {
+  position: absolute;
+  right: -1%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.top-banner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.top-banner-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2e6f43;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.top-banner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.2;
+  max-width: 1000px;
+}
+
+.top-banner-description {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+}
+
+.top-banner-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.top-banner-btn {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.top-banner-btn.primary {
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(139, 195, 74, 0.3);
+}
+
+.top-banner-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+}
+
+.top-banner-btn.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+}
+
+.top-banner-btn.secondary:hover {
+  background: var(--text-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.top-banner-features {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.top-banner-features span {
+  position: relative;
+  padding-left: 0;
+}
+
+/* ============================================ */
+/* Responsive Design - Desktop/Laptop (>1200px) */
+/* ============================================ */
+@media (min-width: 1201px) {
+  .top-banner {
+    padding: 7rem 2rem 7rem 7rem;
+  }
+
+  .top-banner-title {
+    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  }
+
+  .floating-item {
+    opacity: 0.85;
+  }
+}
+
+/* ============================================ */
+/* Responsive Design - Tablet (768px - 1200px) */
+/* ============================================ */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .top-banner {
+    padding: 5rem 2rem 4.5rem;
+  }
+
+  .top-banner-title {
+    font-size: 2.75rem;
+  }
+
+  .top-banner-description {
+    font-size: 1.0625rem;
+  }
+
+  .top-banner-container {
+    padding: 0 1rem;
+  }
+
+  /* Slightly reduce floating items size and opacity on tablet */
+  .item-1 {
+    width: 90px;
+    height: 90px;
+    opacity: 0.75;
+  }
+
+  .item-2 {
+    width: 55px;
+    height: 55px;
+    opacity: 0.7;
+  }
+
+  .item-3 {
+    width: 110px;
+    height: 110px;
+    opacity: 0.75;
+  }
+
+  .item-4 {
+    width: 70px;
+    height: 70px;
+    opacity: 0.7;
+  }
+
+  .item-5 {
+    width: 45px;
+    height: 45px;
+    opacity: 0.65;
+  }
+
+  .item-6 {
+    width: 65px;
+    height: 65px;
+    opacity: 0.7;
+  }
+
+  .bloom-decoration {
+    opacity: 0.3;
+    right: -5%;
+  }
+
+  .top-banner-actions {
+    gap: 0.75rem;
+  }
+
+  .top-banner-btn {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+
+  .top-banner-features {
+    gap: 2rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================ */
+/* Responsive Design - Mobile Landscape (769px - 879px) */
+/* ============================================ */
+@media (min-width: 580px) and (max-width: 878px) and (orientation: landscape) {
+  .top-banner {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .top-banner-title {
+    font-size: 2.25rem;
+  }
+
+  .floating-item {
+    opacity: 0.65 !important;
+  }
+
+  .item-1 {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+/* ============================================ */
+/* Responsive Design - Tablet Portrait (580px - 768px) */
+/* ============================================ */
+@media (max-width: 768px) {
+  .top-banner {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .top-banner-title {
+    font-size: clamp(1.875rem, 5.5vw, 2.4rem);
+  }
+
+  .top-banner-eyebrow {
+    font-size: 0.8125rem;
+  }
+
+  .top-banner-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .top-banner-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .top-banner-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .top-banner-btn.primary {
+    box-shadow: 0 4px 12px rgba(139, 195, 74, 0.25);
+  }
+
+  .top-banner-btn.primary:hover {
+    box-shadow: 0 6px 16px rgba(139, 195, 74, 0.35);
+  }
+
+  .top-banner-features {
+    flex-direction: column;
+    gap: 0.875rem;
+    font-size: 0.875rem;
+  }
+
+  /* Reduce floating items on tablet */
+  .item-1 {
+    width: 70px;
+    height: 70px;
+    top: 6%;
+    left: 8%;
+    opacity: 0.65;
+  }
+
+  .item-2 {
+    width: 45px;
+    height: 45px;
+    top: 20%;
+    left: 24%;
+    opacity: 0.6;
+    display: none;
+  }
+
+  .item-3 {
+    width: 85px;
+    height: 85px;
+    bottom: 15%;
+    left: 20%;
+    opacity: 0.65;
+  }
+
+  .item-4 {
+    width: 65px;
+    height: 65px;
+    bottom: 10%;
+    left: 50%;
+    opacity: 0.6;
+    display: none;
+  }
+
+  .item-5 {
+    width: 35px;
+    height: 35px;
+    top: 15%;
+    left: 40%;
+    opacity: 0.55;
+    display: none;
+  }
+
+  .item-6 {
+    width: 55px;
+    height: 55px;
+    bottom: 8%;
+    left: 5%;
+    opacity: 0.6;
+  }
+
+  .bloom-decoration {
+    opacity: 0.25;
+    right: -10%;
+    max-width: 85%;
+  }
+}
+
+/* ============================================ */
+/* Responsive Design - Mobile (480px - 579px) */
+/* ============================================ */
+@media (max-width: 479px) {
+  .top-banner {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .top-banner-title {
+    font-size: clamp(1.5rem, 6vw, 1.875rem);
+  }
+
+  .top-banner-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .top-banner-description {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .top-banner-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .top-banner-btn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .top-banner-btn.primary {
+    box-shadow: 0 2px 8px rgba(139, 195, 74, 0.2);
+  }
+
+  .top-banner-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 195, 74, 0.3);
+  }
+
+  .top-banner-features {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Hide or minimize floating items on small mobile */
+  .item-1 {
+    width: 50px;
+    height: 50px;
+    top: 8%;
+    left: 10%;
+    opacity: 0.4;
+  }
+
+  .item-2 {
+    display: none;
+  }
+
+  .item-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 15%;
+    opacity: 0.4;
+  }
+
+  .item-4 {
+    display: none;
+  }
+
+  .item-5 {
+    display: none;
+  }
+
+  .item-6 {
+    width: 40px;
+    height: 40px;
+    bottom: 10%;
+    left: 2%;
+    opacity: 0.35;
+  }
+
+  .bloom-decoration {
+    opacity: 0.15;
+    right: -15%;
+    max-width: 80%;
+  }
+}
+
+/* ============================================ */
+/* Responsive Design - Small Mobile (<480px) */
+/* ============================================ */
+@media (max-width: 359px) {
+  .top-banner {
+    padding: 2.5rem 0.75rem 2rem;
+  }
+
+  .top-banner-title {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .top-banner-eyebrow {
+    font-size: 0.6875rem;
+  }
+
+  .top-banner-description {
+    font-size: 0.875rem;
+  }
+
+  .top-banner-actions {
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .top-banner-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .floating-item {
+    display: none;
+  }
+
+  .bloom-decoration {
+    display: none;
+  }
+}

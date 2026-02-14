@@ -1,0 +1,292 @@
+.contact-section {
+  background: linear-gradient(135deg, #e8f0dc 0%, #f5f5dc 100%);
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(139, 195, 74, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(139, 195, 74, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+/* Dotted pattern */
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(139, 195, 74, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content {
+  color: var(--text-primary);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.contact-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-brand {
+  margin-bottom: 3rem;
+}
+
+.contact-logo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.2;
+}
+
+.logo-bloom {
+  color: #e8956b;
+}
+
+.logo-life {
+  color: #5a8a7f;
+}
+
+.contact-tagline {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid rgba(139, 195, 74, 0.2);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(139, 195, 74, 0.4);
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.contact-item.whatsapp:hover {
+  border-color: #25d366;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+.contact-item.whatsapp .contact-icon {
+  color: #25d366;
+}
+
+.contact-item.tiktok:hover {
+  border-color: #00f2ea;
+  box-shadow: 0 4px 16px rgba(0, 242, 234, 0.3);
+}
+
+.contact-item.tiktok .contact-icon {
+  color: #00f2ea;
+}
+
+.contact-item.facebook:hover {
+  border-color: #1877f2;
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3);
+}
+
+.contact-item.facebook .contact-icon {
+  color: #1877f2;
+}
+
+.contact-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-character {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(139, 195, 74, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Sparkle effects */
+.contact-visual::before,
+.contact-visual::after {
+  content: "✨";
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.contact-visual::before {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0.5s;
+}
+
+.contact-visual::after {
+  top: 20%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .contact-brand {
+    margin-bottom: 2rem;
+  }
+
+  .contact-logo {
+    font-size: 2.5rem;
+  }
+
+  .contact-tagline {
+    font-size: 1.25rem;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .contact-character {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-logo {
+    font-size: 2rem;
+  }
+
+  .contact-tagline {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-character {
+    max-width: 250px;
+  }
+}

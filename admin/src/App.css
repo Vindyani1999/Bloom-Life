@@ -1,0 +1,255 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f9fc 50%, #f5f9f7 100%);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 80px;
+}
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f9fc 50%, #f5f9f7 100%);
+  padding: 5.5rem clamp(1.5rem, 3vw, 3.5rem) 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  right: 0;
+  width: calc(100% - 280px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem clamp(1.5rem, 3vw, 3.5rem);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(13, 115, 119, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition:
+    left 0.3s ease,
+    width 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content .header {
+  left: 80px;
+  width: calc(100% - 80px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-mark {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: linear-gradient(140deg, #8aba64, #3f6f48);
+  box-shadow: 0 10px 20px rgba(21, 46, 31, 0.25);
+}
+
+.brand-logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+  display: block;
+}
+
+.brand h1 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+
+.badge {
+  background: #ccfbf1;
+  color: #0d7377;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+}
+
+.section-description {
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+}
+
+.grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--surface-alt);
+  border-radius: 18px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(60, 90, 70, 0.2);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(24, 57, 37, 0.18);
+}
+
+.button.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.button.danger {
+  background: #b34a3a;
+}
+
+.status {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.status.success {
+  color: #24693d;
+}
+
+.status.error {
+  color: #a13b2d;
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+}
+
+.inline {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inline span {
+  color: var(--text-muted);
+}
+
+.contacts {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(90, 110, 96, 0.15);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contact-card p {
+  margin: 0;
+}
+
+.contact-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 240px;
+  }
+
+  .header {
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+
+  .sidebar.collapsed ~ .main-content {
+    margin-left: 70px;
+  }
+
+  .sidebar.collapsed ~ .main-content .header {
+    left: 70px;
+    width: calc(100% - 70px);
+  }
+}

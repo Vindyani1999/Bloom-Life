@@ -1,0 +1,47 @@
+:root {
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino", serif;
+  --font-body: "Manrope", "Avenir", "Gill Sans", sans-serif;
+  --text-primary: #1b2a21;
+  --text-muted: #5a6a61;
+  --accent: #5b8a52;
+  --accent-soft: #dbe7d6;
+  --surface: #ffffff;
+  --surface-alt: #f3f6ef;
+  --shadow: 0 18px 35px rgba(19, 38, 27, 0.12);
+
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-primary);
+  background-color: #f2f5ee;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: var(--font-body);
+}
