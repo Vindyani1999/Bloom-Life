@@ -183,8 +183,17 @@
     align-items: start;
   }
 
+  .footer-links-column {
+    order: 1;
+  }
+
+  .footer-contact-column {
+    order: 2;
+  }
+
   .footer-brand-column {
-    order: -1;
+    order: 3;
+    align-items: start;
   }
 
   .footer-visual {
@@ -212,5 +221,20 @@
 
   .footer-visual {
     max-width: 150px;
+  }
+
+  .footer-links-column,
+  .footer-contact-column {
+    align-items: start;
+    text-align: left;
+  }
+
+  .footer-brand-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    margin: 0;
   }
 }
