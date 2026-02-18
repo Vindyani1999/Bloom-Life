@@ -31,7 +31,7 @@ export default function FeaturedProducts() {
         const apiUrl = `${apiBaseUrl.replace(/\/$/, "")}/api/products`;
         const response = await axios.get(apiUrl, {
           params: {
-            limit: 5,
+            limit: 4,
             sort: "-createdAt",
             isActive: "true",
           },
@@ -80,13 +80,10 @@ export default function FeaturedProducts() {
               {t("featuredProducts.subtitle")}
             </p>
           </div>
-          <Link to="/products" className="view-all-link">
-            {t("featuredProducts.viewAll")}
-          </Link>
         </div>
 
         <div className="featured-grid">
-          {products.map((product) => (
+          {products.slice(0, 4).map((product) => (
             <Link
               key={product._id}
               to={`/products/${product._id}`}
@@ -144,6 +141,12 @@ export default function FeaturedProducts() {
               </article>
             </Link>
           ))}
+        </div>
+
+        <div className="featured-footer">
+          <Link to="/products" className="view-all-link">
+            {t("featuredProducts.viewAll")}
+          </Link>
         </div>
       </div>
     </section>
