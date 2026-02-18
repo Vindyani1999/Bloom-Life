@@ -138,6 +138,20 @@ export default function Products() {
 
   return (
     <div className="products-page">
+      {/* Cute Floating Background Elements */}
+      <div className="floating-elements">
+        <span className="float-item float-1">🌼</span>
+        <span className="float-item float-2">🌼</span>
+        <span className="float-item float-3">🌼</span>
+        <span className="float-item float-4">🌼</span>
+        <span className="float-item float-5">🌼</span>
+        <span className="float-item float-6">🌼</span>
+        <span className="float-item float-7">🌼</span>
+        <span className="float-item float-8">🌼</span>
+        <span className="float-item float-9">🌼</span>
+        <span className="float-item float-10">🌼</span>
+      </div>
+
       {/* <div className="products-search-section">
         <h1 className="products-title">
           <span className="title-icon">🛍️</span>
