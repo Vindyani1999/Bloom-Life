@@ -14,7 +14,7 @@ export default function ContactSection() {
 
           <div className="contact-details">
             <a
-              href="https://wa.me/94704124666"
+              href="https://wa.me/94707124666"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-item whatsapp"
