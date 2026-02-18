@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./ProductImageSlider.css";
 
 type ProductImageSliderProps = {
@@ -10,6 +11,7 @@ export default function ProductImageSlider({
   images,
   productName,
 }: ProductImageSliderProps) {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -94,7 +96,10 @@ export default function ProductImageSlider({
           <img
             key={index}
             src={image}
-            alt={`${productName} - Image ${index + 1}`}
+            alt={t("productImageSlider.imageAlt", {
+              productName,
+              index: index + 1,
+            })}
             className={`slider-image ${index === currentIndex ? "active" : ""}`}
             loading="lazy"
           />
@@ -106,7 +111,7 @@ export default function ProductImageSlider({
           <button
             className="slider-nav prev"
             onClick={prevSlide}
-            aria-label="Previous image"
+            aria-label={t("productImageSlider.previous")}
           >
             <svg
               width="20"
@@ -127,7 +132,7 @@ export default function ProductImageSlider({
           <button
             className="slider-nav next"
             onClick={nextSlide}
-            aria-label="Next image"
+            aria-label={t("productImageSlider.next")}
           >
             <svg
               width="20"
@@ -151,7 +156,9 @@ export default function ProductImageSlider({
                 key={index}
                 className={`slider-dot ${index === currentIndex ? "active" : ""}`}
                 onClick={() => goToSlide(index)}
-                aria-label={`Go to image ${index + 1}`}
+                aria-label={t("productImageSlider.goToImage", {
+                  index: index + 1,
+                })}
               />
             ))}
           </div>

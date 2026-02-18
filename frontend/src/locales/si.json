@@ -14,26 +14,33 @@
     "shopButton": "මිලදී ගන්න",
     "learnButton": "තව දැනගන්න"
   },
+  "topBanner": {
+    "eyebrow": "ඔබ ආදරය කරන ලිපි ද්‍රව්‍ය",
+    "title": "ඔබේ සිහින සැබෑ කරන Bloom Life ලිපි ද්‍රව්‍ය",
+    "description": "ජීවිතේ ලස්සනට සැලසුම් කරන ඔබ වෙනුවෙන්ම Planners, Writing Pads, Notebooks ඇතුළු තවත් ලිපි ද්‍රව්‍ය ගොඩක් එකම තැනක",
+    "shopItems": "නිෂ්පාදන මිලදී ගන්න",
+    "customizeItem": "නිෂ්පාදනයක් Customize කරන්න"
+  },
   "services": {
-    "eyebrow": "අපි ඉදිරිපත් කරන්නේ",
+    "eyebrow": "අපි ලබා දෙන්නේ",
     "title": "අපගේ සේවා",
-    "subtitle": "ඔබගේ අවශ්‍යතා සඳහා සකස් කරන ලද විශිෂ්ට ලිපි ද්‍රව්‍ය විසඳුම් අපි සපයන්නෙමු",
-    "handmadeTitle": "අතින් සාදන ලද ගුණාත්මක භාණ්ඩ",
-    "handmadeDesc": "ආදරයෙන් හා සවිස්තරාත්මක අවධානයෙන් සාදා ඇත",
-    "customTitle": "පහසුකම් අභිරුචිකරණය",
+    "subtitle": "ඔබගේ අවශ්‍යතා සඳහා සකස් කරන ලද විශිෂ්ට ලිපි ද්‍රව්‍ය",
+    "handmadeTitle": "Handmade Quality Items",
+    "handmadeDesc": "අතින් සාදන ලද ගුණාත්මක භාණ්ඩ",
+    "customTitle": "Customizing Facility",
     "customDesc": "ඔබ සඳහා පුද්ගලාරෝපිත නිර්මාණ",
     "deliveryTitle": "දිවයින පුරා බෙදා හැරීම",
-    "deliveryDesc": "සෑම තැනකම වේගවත් හා විශ්වාසනීය නැව්ගත කිරීම",
+    "deliveryDesc": "සෑම තැනකම වේගවත් හා විශ්වාසනීය Delivery කිරීම",
     "varietyTitle": "ප්‍රයෝජනවත් විවිධ භාණ්ඩ",
     "varietyDesc": "ගුණාත්මක ලිපි ද්‍රව්‍ය පුළුල් පරාසයක්",
-    "giftTitle": "එක් එක් ඇණවුම සඳහා නොමිලේ තෑග්ග",
-    "giftDesc": "සෑම මිලදී ගැනීමක් සඳහාම විශේෂ පුදුම තෑග්ගක්",
-    "packingTitle": "ආරක්ෂිත සහ සුන්දර ඇසුරුම්",
-    "packingDesc": "ඔබේ භාණ්ඩ සත්කාරයෙන් සහ ආදරයෙන් ඔතා ඇත"
+    "giftTitle": "ඇණවුම සඳහා free gift එකක්",
+    "giftDesc": "සෑම මිලදී ගැනීමක් සඳහාම cute තෑග්ගක්",
+    "packingTitle": "ආරක්ෂිත ඇසුරුම්",
+    "packingDesc": "ඔබේ භාණ්ඩ ආරක්ෂිතව ඇසුරුම් කර ඇත"
   },
   "featuredProducts": {
     "eyebrow": "නව භාණ්ඩ",
-    "title": "මෑතකදී එකතු කළ නිෂ්පාදන",
+    "title": "අපගේ නවතම නිෂ්පාදන",
     "subtitle": "අපගේ නවතම එකතුවෙන් නැවුම් තෝරා ගැනීම්",
     "viewAll": "සියලුම නිෂ්පාදන බලන්න →",
     "loading": "නවතම නිෂ්පාදන පූරණය වෙමින්...",
@@ -90,16 +97,22 @@
     "lowStock": "අඩු තොගයක්",
     "inStock": "තොගයේ ඇත",
     "description": "විස්තරය",
-    "designQuestion": "ඔබගේ නිර්මාණය කෙසේද?",
+    "designQuestion": "ඔබගේ Item එක අවශ්‍ය කෙසේද?",
     "useExistingDesign": "පවතින නිර්මාණය භාවිතා කරන්න",
-    "requestCustomDesign": "අභිරුචි නිර්මාණය ඉල්ලන්න",
-    "existingDesignInfo": "ඔබගේ භාණ්ඩය පවතින ආවරණ පිටුව සහ පවතින අභ්‍යන්තර පිටු සමඟ සකස් කරනු ලැබේ",
-    "customDesignInfo": "ප්‍රිය කුටී, අප සතුව ඇති සීමිත කාලය සමඟ, අපට ආවරණ පිටු පමණක් අභිරුචිකරණය කළ හැකිය 💕",
+    "requestCustomDesign": "Customized නිර්මාණයක් ඉල්ලන්න",
+    "existingDesignInfo": "ඔබගේ Item එක පවතින Cover Page සහ පවතින Inside Pages සමඟ සකස් කරනු ලැබේ",
+    "customDesignInfo": "Dear Cutiee, අප සතුව ඇති සීමිත කාලය සමඟ, අපට Cover Pages පමණක් Customize කළ හැකිය 💕",
     "specifications": "පිරිවිතර",
     "size": "ප්‍රමාණය:",
     "quantity": "ප්‍රමාණය:",
     "available": "තිබේ",
     "askThisProduct": "මෙම නිෂ්පාදනය විමසන්න",
     "unableToLoad": "නිෂ්පාදන විස්තර පූරණය කළ නොහැකි විය"
+  },
+  "productImageSlider": {
+    "previous": "පෙර රූපය",
+    "next": "ඊළඟ රූපය",
+    "goToImage": "රූපය වෙත යන්න {{index}}",
+    "imageAlt": "{{productName}} - රූපය {{index}}"
   }
 }

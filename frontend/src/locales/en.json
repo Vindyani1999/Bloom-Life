@@ -14,6 +14,13 @@
     "shopButton": "Shop Now",
     "learnButton": "Learn More"
   },
+  "topBanner": {
+    "eyebrow": "STATIONERY YOU WILL LOVE",
+    "title": "Bloom Life stationery for brighter plans and softer days.",
+    "description": "Thoughtful writing pads, planners, and bundles made for students, teams, and creatives who want their day to bloom.",
+    "shopItems": "Shop items",
+    "customizeItem": "Customize an item"
+  },
   "services": {
     "eyebrow": "What We Offer",
     "title": "Our Services",
@@ -101,5 +108,11 @@
     "available": "available",
     "askThisProduct": "Ask This Product",
     "unableToLoad": "Unable to load product details"
+  },
+  "productImageSlider": {
+    "previous": "Previous image",
+    "next": "Next image",
+    "goToImage": "Go to image {{index}}",
+    "imageAlt": "{{productName}} - Image {{index}}"
   }
 }

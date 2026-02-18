@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./TopBanner.css";
 
 export default function TopBanner() {
+  const { t } = useTranslation();
+
   return (
     <section className="top-banner" id="home">
       <div className="floating-items" aria-hidden="true">
@@ -13,20 +16,19 @@ export default function TopBanner() {
         <span className="floating-item item-6" />
       </div>
       <div className="top-banner-container">
-        <p className="top-banner-eyebrow">STATIONERY YOU WILL LOVE</p>
+        <p className="top-banner-eyebrow">{t("topBanner.eyebrow")}</p>
         <h1 className="top-banner-title">
-          Bloom Life stationery for brighter plans and softer days.
+          {t("topBanner.title")}
         </h1>
         <p className="top-banner-description">
-          Thoughtful writing pads, planners, and bundles made for students,
-          teams, and creatives who want their day to bloom.
+          {t("topBanner.description")}
         </p>
         <div className="top-banner-actions">
           <Link to="/products" className="top-banner-btn primary">
-            Shop items
+            {t("topBanner.shopItems")}
           </Link>
           <Link to="/products" className="top-banner-btn secondary">
-            Customize an item
+            {t("topBanner.customizeItem")}
           </Link>
         </div>
         {/* <div className="top-banner-features">
