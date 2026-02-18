@@ -2,7 +2,7 @@ import "./WhatsAppButton.css";
 
 export default function WhatsAppButton() {
   const handleClick = () => {
-    const phoneNumber = "94704124666";
+    const phoneNumber = "94707124666";
     const message = encodeURIComponent(
       "Hi! I'm interested in your stationery products.",
     );
