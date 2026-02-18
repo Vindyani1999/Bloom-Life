@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import axios from "axios";
@@ -164,11 +165,6 @@ export default function Products() {
             </div>
           ) : (
             <>
-              <div className="products-count">
-                <span className="count-label">
-                  Showing {filteredProducts.length} products
-                </span>
-              </div>
               <div className="products-grid">
                 {filteredProducts.map((product) => (
                   <Link
