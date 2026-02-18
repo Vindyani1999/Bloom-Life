@@ -47,7 +47,8 @@
 @media (max-width: 768px) {
   .whatsapp-float {
     bottom: 1.5rem;
-    left: 1.5rem;
+    right: 1.5rem;
+    left: auto;
     width: 56px;
     height: 56px;
   }
@@ -61,7 +62,8 @@
 @media (max-width: 480px) {
   .whatsapp-float {
     bottom: 1rem;
-    left: 1rem;
+    right: 1rem;
+    left: auto;
     width: 52px;
     height: 52px;
   }
