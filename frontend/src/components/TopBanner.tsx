@@ -17,12 +17,8 @@ export default function TopBanner() {
       </div>
       <div className="top-banner-container">
         <p className="top-banner-eyebrow">{t("topBanner.eyebrow")}</p>
-        <h1 className="top-banner-title">
-          {t("topBanner.title")}
-        </h1>
-        <p className="top-banner-description">
-          {t("topBanner.description")}
-        </p>
+        <h1 className="top-banner-title">{t("topBanner.title")}</h1>
+        <p className="top-banner-description">{t("topBanner.description")}</p>
         <div className="top-banner-actions">
           <Link to="/products" className="top-banner-btn primary">
             {t("topBanner.shopItems")}
