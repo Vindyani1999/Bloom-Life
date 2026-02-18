@@ -24,7 +24,10 @@ export default function TopBanner() {
             {t("topBanner.shopItems")}
           </Link>
           <Link to="/products" className="top-banner-btn secondary">
-            {t("topBanner.customizeItem")}
+            <span className="btn-text-full">
+              {t("topBanner.customizeItem")}
+            </span>
+            <span className="btn-text-mobile">Customize</span>
           </Link>
         </div>
         {/* <div className="top-banner-features">
