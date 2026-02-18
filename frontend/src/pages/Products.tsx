@@ -39,10 +39,10 @@ export default function Products() {
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
 
-  //   useEffect(() => {
-  //     // Update search term when URL params change
-  //     setSearchTerm(searchParams.get("search") || "");
-  //   }, [searchParams]);
+  useEffect(() => {
+    // Update search term when URL params change
+    setSearchTerm(searchParams.get("search") || "");
+  }, [searchParams]);
 
   useEffect(() => {
     const fetchProducts = async () => {
