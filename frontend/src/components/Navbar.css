@@ -124,6 +124,93 @@
   transform: translateY(0);
 }
 
+.navbar-lang-toggle {
+  border: 0;
+  padding: 0.25rem;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.lang-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffe1f2 0%, #f8d7ff 55%, #d7f0ff 100%);
+  box-shadow: 0 6px 16px rgba(122, 62, 142, 0.2);
+  border: 1px solid rgba(122, 62, 142, 0.15);
+  min-width: 84px;
+  overflow: hidden;
+}
+
+.lang-track::before {
+  content: "✨";
+  position: absolute;
+  top: -6px;
+  left: 8px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  transform: rotate(-12deg);
+}
+
+.lang-track::after {
+  content: "";
+  position: absolute;
+  inset: -40% 0 0 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.75),
+    transparent 80%
+  );
+  transform: translateX(-120%) rotate(12deg);
+  transition: transform 0.7s ease;
+}
+
+.lang-label {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #7a3e8e;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.lang-thumb {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 34px;
+  height: 24px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(122, 62, 142, 0.2);
+  transform: translate(0, -50%);
+  transition: transform 0.25s ease;
+}
+
+.navbar-lang-toggle.is-si .lang-thumb {
+  transform: translate(38px, -50%);
+}
+
+.navbar-lang-toggle:hover .lang-track::after {
+  transform: translateX(140%) rotate(12deg);
+}
+
+.navbar-lang-toggle:active .lang-thumb {
+  transform: translate(2px, -50%) scale(0.98);
+}
+
+.navbar-lang-toggle.is-si:active .lang-thumb {
+  transform: translate(36px, -50%) scale(0.98);
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -310,8 +397,17 @@
     display: none;
   }
 
+  .navbar-lang-toggle {
+    display: none;
+  }
+
   .navbar-links.open ~ .navbar-cta {
     display: block;
+  }
+
+  .navbar-links.open ~ .navbar-lang-toggle {
+    display: block;
+    margin-bottom: 0.5rem;
   }
 }
 

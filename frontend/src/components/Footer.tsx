@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="footer" id="contact">
       <div className="footer-container">
         {/* Column 1: Quick Access */}
         <div className="footer-column footer-links-column">
-          <h3 className="footer-heading">Quick Access</h3>
+          <h3 className="footer-heading">{t("footer.quickLinks")}</h3>
           <nav className="footer-nav">
-            <a href="/#home">Home</a>
-            <a href="/#services">Services</a>
-            <a href="/#new-arrivals">New Arrivals</a>
-            <Link to="/products">Shop Now</Link>
+            <a href="/#home">{t("footer.home")}</a>
+            <a href="/#services">{t("footer.services")}</a>
+            <a href="/#new-arrivals">{t("navbar.newArrivals")}</a>
+            <Link to="/products">{t("navbar.shopNow")}</Link>
           </nav>
         </div>
 
@@ -25,14 +27,12 @@ export default function Footer() {
               className="footer-logo"
             />
           </div>
-          <p className="footer-copyright">
-            © 2026 Bloom Life. All rights reserved.
-          </p>
+          <p className="footer-copyright">{t("footer.copyright")}</p>
         </div>
 
         {/* Column 3: Contact Details */}
         <div className="footer-column footer-contact-column">
-          <h3 className="footer-heading">Contact Us</h3>
+          <h3 className="footer-heading">{t("contact.title")}</h3>
           <div className="footer-contact-details">
             <a
               href="https://wa.me/94704124666"

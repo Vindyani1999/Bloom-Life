@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./FeaturedProducts.css";
 
@@ -20,6 +21,7 @@ export default function FeaturedProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const { t } = useTranslation();
 
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
 
@@ -54,10 +56,10 @@ export default function FeaturedProducts() {
       <section className="featured-products" id="new-arrivals">
         <div className="featured-container">
           <div className="featured-header">
-            <p className="eyebrow">New Arrivals</p>
-            <h2>Recently Added Products</h2>
+            <p className="eyebrow">{t("featuredProducts.eyebrow")}</p>
+            <h2>{t("featuredProducts.title")}</h2>
           </div>
-          <div className="loading-state">Loading latest products...</div>
+          <div className="loading-state">{t("featuredProducts.loading")}</div>
         </div>
       </section>
     );
@@ -72,14 +74,14 @@ export default function FeaturedProducts() {
       <div className="featured-container">
         <div className="featured-header">
           <div>
-            <p className="eyebrow">New Arrivals</p>
-            <h2>Recently Added Products</h2>
+            <p className="eyebrow">{t("featuredProducts.eyebrow")}</p>
+            <h2>{t("featuredProducts.title")}</h2>
             <p className="featured-subtitle">
-              Fresh picks from our latest collection
+              {t("featuredProducts.subtitle")}
             </p>
           </div>
           <Link to="/products" className="view-all-link">
-            View All Products →
+            {t("featuredProducts.viewAll")}
           </Link>
         </div>
 
@@ -114,10 +116,12 @@ export default function FeaturedProducts() {
                       <div className="price-with-discount">
                         <div className="price-stack">
                           <span className="price-value discounted">
-                            Rs. {product.discountedPrice.toLocaleString()}
+                            {t("common.currency")}{" "}
+                            {product.discountedPrice.toLocaleString()}
                           </span>
                           <span className="price-value original">
-                            Rs. {product.price.toLocaleString()}
+                            {t("common.currency")}{" "}
+                            {product.price.toLocaleString()}
                           </span>
                         </div>
                         <span className="discount-badge">
@@ -127,12 +131,12 @@ export default function FeaturedProducts() {
                               product.price) *
                               100,
                           )}
-                          % OFF
+                          {t("featuredProducts.off")}
                         </span>
                       </div>
                     ) : (
                       <span className="price-value">
-                        Rs. {product.price.toLocaleString()}
+                        {t("common.currency")} {product.price.toLocaleString()}
                       </span>
                     )}
                   </div>

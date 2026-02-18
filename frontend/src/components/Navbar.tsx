@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -7,7 +8,13 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const { t, i18n } = useTranslation();
   const isProductsPage = location.pathname === "/products";
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "si" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -66,13 +73,13 @@ export default function Navbar() {
 
         <div className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
           <a href="/#home" onClick={() => setIsMenuOpen(false)}>
-            Home
+            {t("navbar.home")}
           </a>
           <a href="/#services" onClick={() => setIsMenuOpen(false)}>
-            Services
+            {t("navbar.services")}
           </a>
           <a href="/#new-arrivals" onClick={() => setIsMenuOpen(false)}>
-            New Arrivals
+            {t("navbar.newArrivals")}
           </a>
         </div>
 
@@ -93,7 +100,7 @@ export default function Navbar() {
               </svg>
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder={t("navbar.searchPlaceholder")}
                 value={searchTerm}
                 onChange={handleSearchChange}
                 className="navbar-search-input"
@@ -115,8 +122,23 @@ export default function Navbar() {
           </form>
         )}
 
+        <button
+          className={`navbar-lang-toggle ${i18n.language === "si" ? "is-si" : "is-en"}`}
+          onClick={toggleLanguage}
+          aria-label="Switch language"
+          role="switch"
+          aria-checked={i18n.language === "si"}
+          type="button"
+        >
+          <span className="lang-track">
+            <span className="lang-label lang-en">EN</span>
+            <span className="lang-label lang-si">සිං</span>
+            <span className="lang-thumb" aria-hidden="true"></span>
+          </span>
+        </button>
+
         <Link to="/products" className="navbar-cta">
-          Shop Now
+          {t("navbar.shopNow")}
         </Link>
       </div>
     </nav>

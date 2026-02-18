@@ -1,39 +1,41 @@
+import { useTranslation } from "react-i18next";
 import "./Services.css";
 
-const services = [
-  {
-    title: "Handmade Quality Items",
-    icon: "✨",
-    description: "Crafted with love and attention to detail",
-  },
-  {
-    title: "Customizing Facility",
-    icon: "🎨",
-    description: "Personalized designs just for you",
-  },
-  {
-    title: "Islandwide Delivery",
-    icon: "🚚",
-    description: "Fast and reliable shipping everywhere",
-  },
-  {
-    title: "Useful Various Items",
-    icon: "📚",
-    description: "A wide range of quality stationery",
-  },
-  {
-    title: "Free Gift with Each Order",
-    icon: "🎁",
-    description: "A special surprise gift with every purchase",
-  },
-  {
-    title: "Safe & Cute Packing",
-    icon: "💝",
-    description: "Your items wrapped with care and love",
-  },
-];
-
 export default function Services() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      titleKey: "services.handmadeTitle",
+      icon: "✨",
+      descKey: "services.handmadeDesc",
+    },
+    {
+      titleKey: "services.customTitle",
+      icon: "🎨",
+      descKey: "services.customDesc",
+    },
+    {
+      titleKey: "services.deliveryTitle",
+      icon: "🚚",
+      descKey: "services.deliveryDesc",
+    },
+    {
+      titleKey: "services.varietyTitle",
+      icon: "📚",
+      descKey: "services.varietyDesc",
+    },
+    {
+      titleKey: "services.giftTitle",
+      icon: "🎁",
+      descKey: "services.giftDesc",
+    },
+    {
+      titleKey: "services.packingTitle",
+      icon: "💝",
+      descKey: "services.packingDesc",
+    },
+  ];
   return (
     <section className="services-section" id="services">
       {/* Floating decorative elements */}
@@ -48,11 +50,9 @@ export default function Services() {
 
       <div className="services-container">
         <div className="services-header">
-          <p className="services-eyebrow">What We Offer</p>
-          <h2 className="services-title">Our Services</h2>
-          <p className="services-subtitle">
-            We provide exceptional stationery solutions tailored to your needs
-          </p>
+          <p className="services-eyebrow">{t("services.eyebrow")}</p>
+          <h2 className="services-title">{t("services.title")}</h2>
+          <p className="services-subtitle">{t("services.subtitle")}</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
@@ -62,8 +62,8 @@ export default function Services() {
                 <div className="icon-bg"></div>
               </div>
               <div className="service-content">
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
+                <h3 className="service-title">{t(service.titleKey)}</h3>
+                <p className="service-description">{t(service.descKey)}</p>
               </div>
               <div className="service-corner"></div>
             </div>

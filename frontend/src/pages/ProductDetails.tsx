@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { MdCheckCircleOutline, MdEdit } from "react-icons/md";
 import "./ProductDetails.css";
@@ -22,6 +23,7 @@ type Product = {
 export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -35,7 +37,7 @@ export default function ProductDetails() {
     const fetchProduct = async () => {
       try {
         if (!id) {
-          setError("Product not found");
+          setError(t("productDetails.notFound"));
           setLoading(false);
           return;
         }
@@ -46,13 +48,13 @@ export default function ProductDetails() {
         setLoading(false);
       } catch (err) {
         console.error("Failed to fetch product:", err);
-        setError("Unable to load product details");
+        setError(t("productDetails.unableToLoad"));
         setLoading(false);
       }
     };
 
     fetchProduct();
-  }, [apiBaseUrl, id]);
+  }, [apiBaseUrl, id, t]);
 
   const handleBack = () => {
     if (window.history.length > 1) {
@@ -75,9 +77,9 @@ export default function ProductDetails() {
       const discountPercent = Math.round(
         ((product.price - product.discountedPrice!) / product.price) * 100,
       );
-      message += `💰 *Price:* Rs. ${product.discountedPrice!.toLocaleString()} (was Rs. ${product.price.toLocaleString()}) - ${discountPercent}% OFF\n`;
+      message += `💰 *Price:* ${t("common.currency")} ${product.discountedPrice!.toLocaleString()} (was ${t("common.currency")} ${product.price.toLocaleString()}) - ${discountPercent}% OFF\n`;
     } else {
-      message += `💰 *Price:* Rs. ${product.price.toLocaleString()}\n`;
+      message += `💰 *Price:* ${t("common.currency")} ${product.price.toLocaleString()}\n`;
     }
 
     // Quantity
@@ -87,8 +89,8 @@ export default function ProductDetails() {
     if (selectedDesign) {
       const designType =
         selectedDesign === "available"
-          ? "Use Existing Design"
-          : "Request Custom Design";
+          ? t("productDetails.useExistingDesign")
+          : t("productDetails.requestCustomDesign");
       message += `🎨 *Design Option:* ${designType}\n`;
     }
 
@@ -115,7 +117,7 @@ export default function ProductDetails() {
       <div className="product-detail-page">
         <div className="loading-container">
           <div className="loading-spinner"></div>
-          <p>Loading product details...</p>
+          <p>{t("productDetails.loading")}</p>
         </div>
       </div>
     );
@@ -125,9 +127,9 @@ export default function ProductDetails() {
     return (
       <div className="product-detail-page">
         <div className="error-container">
-          <p>{error || "Product not found"}</p>
+          <p>{error || t("productDetails.notFound")}</p>
           <button className="back-button" onClick={handleBack}>
-            ← Back to products
+            ← {t("productDetails.backToProducts")}
           </button>
         </div>
       </div>
@@ -141,7 +143,7 @@ export default function ProductDetails() {
     <div className="product-detail-page">
       <div className="detail-container">
         <button className="back-button" onClick={handleBack}>
-          ← Back
+          ← {t("productDetails.back")}
         </button>
 
         <div className="detail-content">
@@ -157,7 +159,7 @@ export default function ProductDetails() {
               ) : (
                 <div className="no-image">
                   <span>📦</span>
-                  <p>No image available</p>
+                  <p>{t("productDetails.noImageAvailable")}</p>
                 </div>
               )}
             </div>
@@ -183,11 +185,17 @@ export default function ProductDetails() {
             <div className="name-stock-header">
               <h1 className="product-name">{product.name}</h1>
               {product.stock === 0 ? (
-                <span className="stock-badge out">Out of Stock</span>
+                <span className="stock-badge out">
+                  {t("productDetails.outOfStock")}
+                </span>
               ) : product.stock <= 5 ? (
-                <span className="stock-badge low">Low Stock</span>
+                <span className="stock-badge low">
+                  {t("productDetails.lowStock")}
+                </span>
               ) : (
-                <span className="stock-badge in">In Stock</span>
+                <span className="stock-badge in">
+                  {t("productDetails.inStock")}
+                </span>
               )}
             </div>
 
@@ -197,15 +205,16 @@ export default function ProductDetails() {
                 {hasDiscount ? (
                   <>
                     <span className="current-price">
-                      Rs. {product.discountedPrice!.toLocaleString()}
+                      {t("common.currency")}{" "}
+                      {product.discountedPrice!.toLocaleString()}
                     </span>
                     <span className="original-price">
-                      Rs. {product.price.toLocaleString()}
+                      {t("common.currency")} {product.price.toLocaleString()}
                     </span>
                   </>
                 ) : (
                   <span className="current-price">
-                    Rs. {product.price.toLocaleString()}
+                    {t("common.currency")} {product.price.toLocaleString()}
                   </span>
                 )}
               </div>
@@ -225,13 +234,13 @@ export default function ProductDetails() {
 
             {/* Description */}
             <div className="product-description">
-              <h3>Description</h3>
+              <h3>{t("productDetails.description")}</h3>
               <p>{product.description}</p>
             </div>
 
             {/* Design Selection Section */}
             <div className="design-section">
-              <h3>How Would You Like Your Design?</h3>
+              <h3>{t("productDetails.designQuestion")}</h3>
               <div className="design-options">
                 <button
                   className={`design-option ${selectedDesign === "available" ? "selected" : ""}`}
@@ -240,7 +249,9 @@ export default function ProductDetails() {
                   <span className="design-icon">
                     <MdCheckCircleOutline />
                   </span>
-                  <span className="design-label">Use Existing Design</span>
+                  <span className="design-label">
+                    {t("productDetails.useExistingDesign")}
+                  </span>
                 </button>
                 <button
                   className={`design-option ${selectedDesign === "customize" ? "selected" : ""}`}
@@ -249,21 +260,17 @@ export default function ProductDetails() {
                   <span className="design-icon">
                     <MdEdit />
                   </span>
-                  <span className="design-label">Request Custom Design</span>
+                  <span className="design-label">
+                    {t("productDetails.requestCustomDesign")}
+                  </span>
                 </button>
               </div>
               {selectedDesign && (
                 <div className="design-selection-info">
                   {selectedDesign === "available" ? (
-                    <p>
-                      Your item will be prepared with the available cover page
-                      and existing inside pages
-                    </p>
+                    <p>{t("productDetails.existingDesignInfo")}</p>
                   ) : (
-                    <p>
-                      Dear cutie, with the limited time that we have, we can
-                      customize the cover pages only 💕
-                    </p>
+                    <p>{t("productDetails.customDesignInfo")}</p>
                   )}
                 </div>
               )}
@@ -282,7 +289,9 @@ export default function ProductDetails() {
             {/* Quantity Selector */}
             {product.stock > 0 && (
               <div className="quantity-section">
-                <label className="quantity-label">Quantity:</label>
+                <label className="quantity-label">
+                  {t("productDetails.quantity")}
+                </label>
                 <div className="quantity-controls">
                   <button
                     className="quantity-btn"
@@ -301,7 +310,7 @@ export default function ProductDetails() {
                   </button>
                 </div>
                 <span className="stock-available">
-                  {product.stock} available
+                  {product.stock} {t("productDetails.available")}
                 </span>
               </div>
             )}
@@ -315,7 +324,9 @@ export default function ProductDetails() {
               {/* <span className="button-icon">
                 <IoLogoWhatsapp />
               </span> */}
-              {product.stock === 0 ? "Out of Stock" : "Ask This Product"}
+              {product.stock === 0
+                ? t("productDetails.outOfStock")
+                : t("productDetails.askThisProduct")}
             </button>
           </div>
         </div>

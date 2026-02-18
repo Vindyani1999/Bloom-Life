@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./Products.css";
 
@@ -19,6 +20,7 @@ type Product = {
 
 export default function Products() {
   const [searchParams] = useSearchParams();
+  const { t } = useTranslation();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState(
@@ -166,15 +168,15 @@ export default function Products() {
           {loading ? (
             <div className="products-loading">
               <div className="loading-spinner"></div>
-              <p>Loading amazing products...</p>
+              <p>{t("products.loading")}</p>
             </div>
           ) : filteredProducts.length === 0 ? (
             <div className="no-products">
               <span className="no-products-icon">😢</span>
-              <h3>No products found</h3>
-              <p>Try adjusting your filters to see more results</p>
+              <h3>{t("products.noProducts")}</h3>
+              <p>{t("products.tryAdjusting")}</p>
               <button onClick={clearFilters} className="reset-btn">
-                Reset Filters
+                {t("products.resetFilters")}
               </button>
             </div>
           ) : (
@@ -210,10 +212,12 @@ export default function Products() {
                             <div className="price-with-discount">
                               <div className="price-stack">
                                 <span className="price-value discounted">
-                                  Rs. {product.discountedPrice.toLocaleString()}
+                                  {t("common.currency")}{" "}
+                                  {product.discountedPrice.toLocaleString()}
                                 </span>
                                 <span className="price-value original">
-                                  Rs. {product.price.toLocaleString()}
+                                  {t("common.currency")}{" "}
+                                  {product.price.toLocaleString()}
                                 </span>
                               </div>
                               <span className="discount-badge">
@@ -222,12 +226,13 @@ export default function Products() {
                                     product.price) *
                                     100,
                                 )}
-                                % OFF
+                                {t("featuredProducts.off")}
                               </span>
                             </div>
                           ) : (
                             <span className="price-value">
-                              Rs. {product.price.toLocaleString()}
+                              {t("common.currency")}{" "}
+                              {product.price.toLocaleString()}
                             </span>
                           )}
                         </div>
@@ -244,7 +249,11 @@ export default function Products() {
         <button
           className={`filter-toggle ${isFiltersOpen ? "active" : ""}`}
           onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-          title={isFiltersOpen ? "Hide filters" : "Show filters"}
+          title={
+            isFiltersOpen
+              ? t("products.hideFilters")
+              : t("products.showFilters")
+          }
           aria-expanded={isFiltersOpen}
           aria-controls="products-filters"
         >
@@ -281,7 +290,7 @@ export default function Products() {
           <div className="filters-content">
             {/* Category Filter */}
             <div className="filter-section">
-              <label className="filter-label">Category</label>
+              <label className="filter-label">{t("products.category")}</label>
               <div className="category-filters">
                 {categoryOptions.map((category) => (
                   <label key={category} className="category-checkbox">
@@ -291,7 +300,11 @@ export default function Products() {
                       checked={selectedCategories.includes(category)}
                       onChange={() => handleCategoryChange(category)}
                     />
-                    <span>{category}</span>
+                    <span>
+                      {t(
+                        `products.categories.${category.toLowerCase().replace(/\s/g, "")}`,
+                      )}
+                    </span>
                   </label>
                 ))}
               </div>
@@ -299,7 +312,7 @@ export default function Products() {
 
             {/* Price Range Filter */}
             <div className="filter-section">
-              <label className="filter-label">Price Range</label>
+              <label className="filter-label">{t("products.priceRange")}</label>
               <div className="price-range">
                 <div className="price-inputs">
                   {/* <div className="price-input-group">
@@ -334,14 +347,14 @@ export default function Products() {
                   />
                 </div>
                 <div className="price-display">
-                  Rs. {priceRange.min.toLocaleString()} — Rs.{" "}
-                  {priceRange.max.toLocaleString()}
+                  {t("common.currency")} {priceRange.min.toLocaleString()} —{" "}
+                  {t("common.currency")} {priceRange.max.toLocaleString()}
                 </div>
               </div>
             </div>
 
             <button onClick={clearFilters} className="clear-all-btn">
-              Clear All Filters
+              {t("products.clearAll")}
             </button>
           </div>
         </div>

@@ -1,0 +1,105 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "newArrivals": "New Arrivals",
+    "shopNow": "Shop Now",
+    "searchPlaceholder": "Search products..."
+  },
+  "hero": {
+    "welcome": "Welcome to",
+    "brandName": "Bloom Life",
+    "tagline": "Where Creativity Blooms",
+    "description": "Discover our collection of beautifully handcrafted stationery items. From custom notebooks to unique planners, each piece is made with love and attention to detail.",
+    "shopButton": "Shop Now",
+    "learnButton": "Learn More"
+  },
+  "services": {
+    "eyebrow": "What We Offer",
+    "title": "Our Services",
+    "subtitle": "We provide exceptional stationery solutions tailored to your needs",
+    "handmadeTitle": "Handmade Quality Items",
+    "handmadeDesc": "Crafted with love and attention to detail",
+    "customTitle": "Customizing Facility",
+    "customDesc": "Personalized designs just for you",
+    "deliveryTitle": "Islandwide Delivery",
+    "deliveryDesc": "Fast and reliable shipping everywhere",
+    "varietyTitle": "Useful Various Items",
+    "varietyDesc": "A wide range of quality stationery",
+    "giftTitle": "Free Gift with Each Order",
+    "giftDesc": "A special surprise gift with every purchase",
+    "packingTitle": "Safe & Cute Packing",
+    "packingDesc": "Your items wrapped with care and love"
+  },
+  "featuredProducts": {
+    "eyebrow": "New Arrivals",
+    "title": "Recently Added Products",
+    "subtitle": "Fresh picks from our latest collection",
+    "viewAll": "View All Products →",
+    "loading": "Loading latest products...",
+    "off": "% OFF"
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you! Reach out for custom orders or inquiries.",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "whatsapp": "WhatsApp",
+    "tiktok": "TikTok"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "contact": "Contact",
+    "copyright": "© 2026 Bloom Life. All rights reserved."
+  },
+  "products": {
+    "loading": "Loading amazing products...",
+    "noProducts": "No products found",
+    "tryAdjusting": "Try adjusting your filters to see more results",
+    "resetFilters": "Reset Filters",
+    "clearAll": "Clear All Filters",
+    "category": "Category",
+    "priceRange": "Price Range",
+    "filters": "Filters",
+    "hideFilters": "Hide",
+    "showFilters": "Show",
+    "categories": {
+      "notebooks": "Notebooks",
+      "planners": "Planners",
+      "journals": "Journals",
+      "writingPads": "Writing Pads",
+      "calendar": "Calendar",
+      "other": "Other"
+    }
+  },
+  "common": {
+    "currency": "Rs."
+  },
+  "productDetails": {
+    "loading": "Loading product details...",
+    "notFound": "Product not found",
+    "backToProducts": "Back to products",
+    "back": "Back",
+    "noImageAvailable": "No image available",
+    "outOfStock": "Out of Stock",
+    "lowStock": "Low Stock",
+    "inStock": "In Stock",
+    "description": "Description",
+    "designQuestion": "How Would You Like Your Design?",
+    "useExistingDesign": "Use Existing Design",
+    "requestCustomDesign": "Request Custom Design",
+    "existingDesignInfo": "Your item will be prepared with the available cover page and existing inside pages",
+    "customDesignInfo": "Dear cutie, with the limited time that we have, we can customize the cover pages only 💕",
+    "specifications": "Specifications",
+    "size": "Size:",
+    "quantity": "Quantity:",
+    "available": "available",
+    "askThisProduct": "Ask This Product",
+    "unableToLoad": "Unable to load product details"
+  }
+}
