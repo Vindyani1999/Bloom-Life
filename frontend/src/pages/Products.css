@@ -1567,22 +1567,41 @@
     border-radius: 12px 12px 0 0;
   }
 
+  .product-card .discount-badge {
+    right: 8px;
+    bottom: 8px;
+    top: auto;
+  }
+
   .product-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin: 0.75rem 0 0.5rem;
   }
 
   .product-description {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     line-height: 1.4;
     margin-bottom: 0.75rem;
     color: var(--text-muted);
   }
 
   .product-price {
-    font-size: 1.0625rem;
+    font-size: 0.95rem;
     font-weight: 700;
+  }
+
+  .price-with-discount {
+    gap: 0rem;
+  }
+
+  .price-stack {
+    gap: 0rem;
+  }
+
+  .price-value {
+    margin: 0 !important;
+    line-height: 1;
   }
 
   .product-footer {

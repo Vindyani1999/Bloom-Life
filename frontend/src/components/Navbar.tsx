@@ -81,6 +81,20 @@ export default function Navbar() {
           <a href="/#new-arrivals" onClick={() => setIsMenuOpen(false)}>
             {t("navbar.newArrivals")}
           </a>
+          <button
+            className={`navbar-lang-toggle-mobile ${i18n.language === "si" ? "is-si" : "is-en"}`}
+            onClick={toggleLanguage}
+            aria-label="Switch language"
+            role="switch"
+            aria-checked={i18n.language === "si"}
+            type="button"
+          >
+            <span className="lang-track">
+              <span className="lang-label lang-en">EN</span>
+              <span className="lang-label lang-si">සිං</span>
+              <span className="lang-thumb" aria-hidden="true"></span>
+            </span>
+          </button>
         </div>
 
         {/* Search Bar - Only on Products Page */}
@@ -122,24 +136,11 @@ export default function Navbar() {
           </form>
         )}
 
-        <button
-          className={`navbar-lang-toggle ${i18n.language === "si" ? "is-si" : "is-en"}`}
-          onClick={toggleLanguage}
-          aria-label="Switch language"
-          role="switch"
-          aria-checked={i18n.language === "si"}
-          type="button"
-        >
-          <span className="lang-track">
-            <span className="lang-label lang-en">EN</span>
-            <span className="lang-label lang-si">සිං</span>
-            <span className="lang-thumb" aria-hidden="true"></span>
-          </span>
-        </button>
-
-        <Link to="/products" className="navbar-cta">
-          {t("navbar.shopNow")}
-        </Link>
+        {!isProductsPage && (
+          <Link to="/products" className="navbar-cta">
+            {t("navbar.shopNow")}
+          </Link>
+        )}
       </div>
     </nav>
   );
