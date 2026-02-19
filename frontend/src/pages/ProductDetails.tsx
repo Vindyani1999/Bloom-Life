@@ -66,7 +66,7 @@ export default function ProductDetails() {
 
   const handleAskAboutProduct = () => {
     if (!product) return;
-    const whatsappNumber = "07071246666"; // Bloom Life WhatsApp number
+    const whatsappNumber = "0707124666"; // Bloom Life WhatsApp number
 
     // Construct detailed message
     let message = `Hello! I'm interested in the following product:\n\n`;
