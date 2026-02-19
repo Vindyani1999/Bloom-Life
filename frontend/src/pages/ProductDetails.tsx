@@ -69,21 +69,21 @@ export default function ProductDetails() {
     const whatsappNumber = "94707124666"; // Bloom Life WhatsApp number (E.164)
 
     // Construct detailed message
-    let message = `🌸🌸 Hi! I'm interested in this product:\n\n`;
-    message += `*Product:* ${product.name}\n`;
+    let message = `Hi! I'm interested in this...\n\n`;
+    message += `*🌸Product:* ${product.name}\n`;
 
     // Price information
     if (hasDiscount) {
       const discountPercent = Math.round(
         ((product.price - product.discountedPrice!) / product.price) * 100,
       );
-      message += `*Price:* ${t("common.currency")} ${product.discountedPrice!.toLocaleString()} (was ${t("common.currency")} ${product.price.toLocaleString()}) - ${discountPercent}% OFF\n`;
+      message += `*🌸Price:* ${t("common.currency")} ${product.discountedPrice!.toLocaleString()} (was ${t("common.currency")} ${product.price.toLocaleString()}) - ${discountPercent}% OFF\n`;
     } else {
-      message += `*Price:* ${t("common.currency")} ${product.price.toLocaleString()}\n`;
+      message += `*🌸Price:* ${t("common.currency")} ${product.price.toLocaleString()}\n`;
     }
 
     // Quantity
-    message += `*Quantity:* ${quantity}\n`;
+    message += `*🌸Quantity:* ${quantity}\n`;
 
     // Design preference
     if (selectedDesign) {
@@ -91,7 +91,7 @@ export default function ProductDetails() {
         selectedDesign === "available"
           ? t("productDetails.useExistingDesign")
           : t("productDetails.requestCustomDesign");
-      message += `*Design:* ${designType}\n`;
+      message += `*🌸Design:* ${designType}\n`;
     }
 
     message += `\nPlease let me know more details or confirm this order.`;
