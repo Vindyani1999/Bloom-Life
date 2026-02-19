@@ -91,7 +91,7 @@ export default function ProductDetails() {
         selectedDesign === "available"
           ? t("productDetails.useExistingDesign")
           : t("productDetails.requestCustomDesign");
-      message += `*Design Option:* ${designType}\n`;
+      message += `*Design:* ${designType}\n`;
     }
 
     message += `\nPlease let me know more details or confirm this order.`;
