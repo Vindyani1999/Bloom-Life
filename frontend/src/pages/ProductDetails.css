@@ -97,7 +97,7 @@
 
 .main-image-container {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   background: linear-gradient(135deg, #f7f5eb 0%, #eef6f0 50%, #fde8e3 100%);
   border-radius: 20px;
   overflow: hidden;
